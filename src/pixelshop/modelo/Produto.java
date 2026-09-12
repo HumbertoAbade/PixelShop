@@ -5,16 +5,16 @@ public class Produto {
     private double preco;
     private int quantidadeEstoque;
 
-    public String getNome(){return nome;}
-    public double getPreco(){return preco;}
-    public int getQuantidadeEstoque(){return quantidadeEstoque;}
+    public String getNome() { return nome; }
+    public double getPreco() { return preco; }
+    public int getQuantidadeEstoque() { return quantidadeEstoque; }
 
     public boolean setPreco(double preco) {
         if (preco > 0) {
             this.preco = preco;
             return true;
         } else {
-            this.preco = 0;
+            System.out.println("Valor invalido, o preço não pode ser negativo");
             return false;
         }
     }
@@ -24,21 +24,21 @@ public class Produto {
             this.quantidadeEstoque = qtd;
             return true;
         } else {
-            this.quantidadeEstoque = 0;
+            System.out.println("Valor invalido, a quantidade estoque não pode ser negativa");
             return false;
         }
     }
 
-    public boolean adicionarEstoque(int qtd){
-        if(qtd > 0){
+    public boolean adicionarEstoque(int qtd) {
+        if (qtd > 0) {
             this.quantidadeEstoque += qtd;
             return true;
         }
         return false;
     }
 
-    public boolean removerEstoque(int qtd){
-        if(qtd > 0 && quantidadeEstoque - qtd >= 0){
+    public boolean removerEstoque(int qtd) {
+        if (qtd > 0 && quantidadeEstoque - qtd >= 0) {
             this.quantidadeEstoque -= qtd;
             return true;
         }
@@ -50,5 +50,4 @@ public class Produto {
         setPreco(preco);
         setQuantidadeEstoque(quantidadeEstoque);
     }
-
 }
